@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>彭智焕 blog</title>
+    <link>https://pengzhihuan.com/</link>
+    <description>Recent content on 彭智焕 blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>You</copyright>
+    <lastBuildDate>Sat, 19 Dec 2020 19:43:38 +0800</lastBuildDate><atom:link href="https://pengzhihuan.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>进程同步问题</title>
+      <link>https://pengzhihuan.com/posts/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 19 Dec 2020 19:43:38 +0800</pubDate>
+      
+      <guid>https://pengzhihuan.com/posts/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98/</guid>
+      <description>生产者消费者问题 实验目的 掌握基本的同步互斥算法，理解生产者和消费者模型
+设计思想 生产者—消费者问题是一种同步问题的抽象描述。
+计算机系统中的每个进程都可以消费或生产某类资源。当系统中某一进程使用某一资源时，可以看作是消耗，且该进程称为消费者。
+而当某个进程释放资源时，则它就相当一个生产者。
+在同一时刻只能有一个生产者或一个消费者使用缓冲区，有互斥信号量可以控制各个生产者和消费者之间互斥，使得生产和消费的工作能够有序的进行，而不至于发生死锁。
+通过一个有界缓冲区(用数组来实现，类似循环队列)把生产者和消费者联系起来。假定生产者和消费者的优先级是相同的，只要缓冲区未满，生产者就可以生产产品并将产品送入缓冲区。类似地，只要缓冲区未空，消费者就可以从缓冲区中去走产品并消费它。应该禁止生产者向满的缓冲区送入产品，同时也应该禁止消费者从空的缓冲区中取出产品，这一机制有生产者线程和消费者线程之间的互斥关系来实现。
+设计要求   每个生产者和消费者对有界缓冲区进行操作后，即时显示有界缓冲区的全部内容、当前指针位置和生产者／消费者线程的标识符。
+  生产者和消费者各有两个以上。
+  多个生产者或多个消费者之间须共享对缓冲区进行操作的函数代码。
+  程序设计与实现 1．阅读操作系统的进程管理章节内容，对进程的同步和互斥，以及信号量机制有深入理解。
+著名的生产者—消费者问题是典型的进程同步问题，操作系统中实现进程同步的常用机制有信号量和PV操作等。除赋初值外，信号量仅由同步原语P和V对其进行操作，PV操作的不分割性确保执行的原子性及信号量值的完整性。
+信号量按用途分两种：
+（1）公用信号量，用于实现进程互斥；
+（2）私有信号量，多用于并发进程同步。
+按取值又分两种：
+（1）两元信号量，主要用于解决进程互斥问题；
+（2）一般信号量，主要解决进程同步问题。
+ 流程图
+  算法：
+a. 主程序（main）:
+​ i. 创建信号量，共享内存并初始化
+​ ii. 创建生产者，消费者进程，生产者进行生产，消费者进行消费
+​ iii. 等待所有子进程结束
+​ iv. 删除信号量，共享内存
+b. 生产者进程（pro_fun） ：
+​	i. 通过key 获得信号量，共享内存的ID，将内存添加到自己的地址空间
+​	ii. P(empty), P(mutex), Add(data), V(mutex), V(full)
+​	iii. 解除和共享内存的关联
+c. 消费者进程（con_fun）：
+​	i. 通过key 获得信号量，共享内存的ID，将内存添加到自己的地址空间</description>
+    </item>
+    
+    <item>
+      <title>2020 12六级总结</title>
+      <link>https://pengzhihuan.com/posts/2020-12%E5%85%AD%E7%BA%A7%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://pengzhihuan.com/posts/2020-12%E5%85%AD%E7%BA%A7%E6%80%BB%E7%BB%93/</guid>
+      <description>六级总结 白给，又一次的白给。。。。。。
+英语不是短时间可以突破的。</description>
+    </item>
+    
+    <item>
+      <title>lsp</title>
+      <link>https://pengzhihuan.com/posts/%E5%A3%81%E7%BA%B8/</link>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://pengzhihuan.com/posts/%E5%A3%81%E7%BA%B8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>赤壁赋</title>
+      <link>https://pengzhihuan.com/posts/%E8%B5%A4%E5%A3%81%E8%B5%8B/</link>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://pengzhihuan.com/posts/%E8%B5%A4%E5%A3%81%E8%B5%8B/</guid>
+      <description>原文 壬戌之秋，七月既望，蘇子與客泛舟遊於赤壁之下。清風徐來，水波不興。舉酒屬客，誦明月之詩，歌窈窕之章。少焉，月出於東山之上，徘徊於斗牛之間。白露橫江，水光接天。縱一葦之所如，凌萬頃之茫然。浩浩乎如馮虛御風，而不知其所止；飄飄乎如遺世獨立,羽化而登仙。
+於是飲酒樂甚，扣舷而歌之。歌曰：“桂棹兮蘭槳，擊空明兮溯流光。渺渺兮予懷，望美人兮天一方。”客有吹洞簫者，倚歌而和之。其聲嗚嗚然，如怨如慕，如泣如訴；餘音嫋嫋，不絕如縷。舞幽壑之潛蛟，泣孤舟之嫠婦。
+蘇子愀然，正襟危坐，而問客曰：“何爲其然也？”客曰：“‘月明星稀，烏鵲南飛。’此非曹孟德之詩乎？西望夏口，東望武昌，山川相繆，鬱乎蒼蒼，此非孟德之困於周郎者乎？方其破荊州，下江陵，順流而東也，舳艫千里，旌旗蔽空，釃酒臨江，橫槊賦詩，固一世之雄也，而今安在哉？況吾與子漁樵於江渚之上，侶魚蝦而友麋鹿，駕一葉之扁舟，舉匏樽以相屬。寄蜉蝣於天地，渺滄海之一粟。哀吾生之須臾，羨長 江之無窮。挾飛仙以遨遊，抱明月而長終。知不可乎驟得，託遺響於悲風。”
+蘇子曰：“客亦知夫水與月乎？逝者如斯，而未嘗往也；盈虛者如彼，而卒莫消長也。蓋將自其變者而觀之，則天地曾不能以一瞬；自其不變者而觀之，則物與我皆無盡也，而又何羨乎！且夫天地之間，物各有主，苟非吾之所有，雖一毫而莫取。惟江上之清風，與山間之明月，耳得之而爲聲，目遇之而成色，取之無禁，用之不竭。是造物者之無盡藏也，而吾與子之所共適。”(共適 一作：共食) 客喜而笑，洗盞更酌。餚核既盡，杯盤狼籍。相與枕藉乎舟中，不知東方之既白。</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://pengzhihuan.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pengzhihuan.com/about/</guid>
+      <description>这个世界会好吗 </description>
+    </item>
+    
+  </channel>
+</rss>

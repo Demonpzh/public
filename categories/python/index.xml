@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on 彭智焕 blog</title>
+    <link>https://pengzhihuan.com/categories/python/</link>
+    <description>Recent content in python on 彭智焕 blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>You</copyright>
+    <lastBuildDate>Sat, 19 Dec 2020 19:43:38 +0800</lastBuildDate><atom:link href="https://pengzhihuan.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>进程同步问题</title>
+      <link>https://pengzhihuan.com/posts/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 19 Dec 2020 19:43:38 +0800</pubDate>
+      
+      <guid>https://pengzhihuan.com/posts/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98/</guid>
+      <description>生产者消费者问题 实验目的 掌握基本的同步互斥算法，理解生产者和消费者模型
+设计思想 生产者—消费者问题是一种同步问题的抽象描述。
+计算机系统中的每个进程都可以消费或生产某类资源。当系统中某一进程使用某一资源时，可以看作是消耗，且该进程称为消费者。
+而当某个进程释放资源时，则它就相当一个生产者。
+在同一时刻只能有一个生产者或一个消费者使用缓冲区，有互斥信号量可以控制各个生产者和消费者之间互斥，使得生产和消费的工作能够有序的进行，而不至于发生死锁。
+通过一个有界缓冲区(用数组来实现，类似循环队列)把生产者和消费者联系起来。假定生产者和消费者的优先级是相同的，只要缓冲区未满，生产者就可以生产产品并将产品送入缓冲区。类似地，只要缓冲区未空，消费者就可以从缓冲区中去走产品并消费它。应该禁止生产者向满的缓冲区送入产品，同时也应该禁止消费者从空的缓冲区中取出产品，这一机制有生产者线程和消费者线程之间的互斥关系来实现。
+设计要求   每个生产者和消费者对有界缓冲区进行操作后，即时显示有界缓冲区的全部内容、当前指针位置和生产者／消费者线程的标识符。
+  生产者和消费者各有两个以上。
+  多个生产者或多个消费者之间须共享对缓冲区进行操作的函数代码。
+  程序设计与实现 1．阅读操作系统的进程管理章节内容，对进程的同步和互斥，以及信号量机制有深入理解。
+著名的生产者—消费者问题是典型的进程同步问题，操作系统中实现进程同步的常用机制有信号量和PV操作等。除赋初值外，信号量仅由同步原语P和V对其进行操作，PV操作的不分割性确保执行的原子性及信号量值的完整性。
+信号量按用途分两种：
+（1）公用信号量，用于实现进程互斥；
+（2）私有信号量，多用于并发进程同步。
+按取值又分两种：
+（1）两元信号量，主要用于解决进程互斥问题；
+（2）一般信号量，主要解决进程同步问题。
+ 流程图
+  算法：
+a. 主程序（main）:
+​ i. 创建信号量，共享内存并初始化
+​ ii. 创建生产者，消费者进程，生产者进行生产，消费者进行消费
+​ iii. 等待所有子进程结束
+​ iv. 删除信号量，共享内存
+b. 生产者进程（pro_fun） ：
+​	i. 通过key 获得信号量，共享内存的ID，将内存添加到自己的地址空间
+​	ii. P(empty), P(mutex), Add(data), V(mutex), V(full)
+​	iii. 解除和共享内存的关联
+c. 消费者进程（con_fun）：
+​	i. 通过key 获得信号量，共享内存的ID，将内存添加到自己的地址空间</description>
+    </item>
+    
+  </channel>
+</rss>
